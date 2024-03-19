@@ -13,3 +13,7 @@ This is some my thoughts about solving problems
     - Finding path from one node to another node 
     - Detecting cycles in a graph
     - Topological sort
+
+- **Tips**:
+
+    - You can add more into "visited" variable
