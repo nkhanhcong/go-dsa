@@ -19,7 +19,21 @@ func TestEventualSafeNodes(t *testing.T) {
 		{},
 	}
 
-	res1 := EventualSafeNodes(graph1)
+	res1 := EventualSafeNodesRecur(graph1)
+	fmt.Println(res1)
+
+}
+
+func TestEventualSafeNodesRecur(t *testing.T) {
+	graph1 := [][]int{
+		{1},
+		{2},
+		{3},
+		{4},
+		{},
+	}
+
+	res1 := EventualSafeNodesRecur(graph1)
 	fmt.Println(res1)
 
 }

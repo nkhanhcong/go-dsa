@@ -5,12 +5,13 @@ func FindCircleNum(isConnected [][]int) int {
 	visited := make(map[int]bool)
 	count := 0
 
-	for cNumber, _ := range isConnected {
+	for cNumber := range isConnected {
 
 		if !visited[cNumber] {
 			count += 1
 			dfs(visited, cNumber, isConnected)
 
+			// dfsRecursive(isConnected,cNumber, visited)
 		}
 	}
 
@@ -29,6 +30,17 @@ func dfs(visited map[int]bool, start int, isConnected [][]int) {
 				visited[cNumber] = true
 				stack = append(stack, cNumber)
 			}
+		}
+	}
+}
+
+func dfsRecursive(isConnected [][]int, start int, visitedMap map[int]bool) {
+	visitedMap[start] = true
+
+	for nCity, v := range isConnected[start] {
+		if !visitedMap[nCity] && v == 1 {
+			dfsRecursive(isConnected, nCity, visitedMap)
+
 		}
 	}
 }

@@ -15,3 +15,14 @@ func TestDFSTravel( *testing.T){
 	fmt.Println(visited)
 
 }
+
+func TestDFSRecursive(t *testing.T){
+
+	graph := CreateGraph()
+	start:= "0"
+
+	visitedMap:= make(map[string]bool)
+	DFSTravelRecursive(graph,start, visitedMap)
+
+	fmt.Println(visitedMap)
+}

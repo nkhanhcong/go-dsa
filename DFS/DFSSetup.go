@@ -34,3 +34,15 @@ func DFSTravel(graph map[string][]string, start string) map[string]bool {
 
 	return visitedMap
 }
+
+func DFSTravelRecursive(graph map[string][]string, start string, visited map[string]bool) {
+	visited[start] = true
+
+	fmt.Println(start)
+	for _, nei := range graph[start] {
+		if !visited[nei] {
+			DFSTravelRecursive(graph, nei, visited)
+		}
+	}
+
+}
