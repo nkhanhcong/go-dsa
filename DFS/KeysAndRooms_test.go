@@ -2,11 +2,12 @@ package dfs
 
 import (
 	"testing"
+
 	"github.com/stretchr/testify/assert"
 )
 
 func TestCanTravelAllRoom(t *testing.T) {
-	rooms := [][]int{[]int{1}, []int{2}, []int{3}, []int{}}
+	rooms := [][]int{{1}, {2}, {3}, {}}
 
 	res := CanVisitAllRooms(rooms)
 
@@ -14,9 +15,8 @@ func TestCanTravelAllRoom(t *testing.T) {
 
 }
 
-
 func TestCannotTravelAllRoom(t *testing.T) {
-	rooms := [][]int{[]int{1,3}, []int{3,0,1}, []int{2}, []int{0}}
+	rooms := [][]int{{1, 3}, {3, 0, 1}, {2}, {0}}
 
 	res := CanVisitAllRooms(rooms)
 

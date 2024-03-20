@@ -6,7 +6,7 @@ import (
 )
 
 func TestEventualSafeNodes(t *testing.T) {
-	graph := [][]int{[]int{1, 2}, []int{2, 3}, []int{5}, []int{0}, []int{5}, []int{}, []int{}}
+	graph := [][]int{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}
 	res := EventualSafeNodes(graph)
 
 	fmt.Println(res)

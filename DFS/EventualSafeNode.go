@@ -7,5 +7,4 @@ func EventualSafeNodes(graph [][]int) []int{
 
 func dfsNode(graph [][]int){
 
-
 }
