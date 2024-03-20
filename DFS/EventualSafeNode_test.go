@@ -10,4 +10,16 @@ func TestEventualSafeNodes(t *testing.T) {
 	res := EventualSafeNodes(graph)
 
 	fmt.Println(res)
+
+	graph1 := [][]int{
+		{1, 2, 3, 4},
+		{1, 2},
+		{3, 4},
+		{0, 4},
+		{},
+	}
+
+	res1 := EventualSafeNodes(graph1)
+	fmt.Println(res1)
+
 }
