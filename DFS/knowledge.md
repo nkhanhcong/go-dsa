@@ -16,4 +16,5 @@ This is some my thoughts about solving problems
 
 - **Tips**:
 
-    - You can add more into "visited" variable
+    - You can add some trick into "visited" variable, you can pull visited out and polute it with each time travel.
+    - After doing EventualSafeNode, I realize when you use recursive it more clean code compare with using itterative
