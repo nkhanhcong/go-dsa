@@ -60,11 +60,12 @@ func dfsNode(graph [][]int, start int, visitedMap map[int]bool, stateMap map[int
 }
 
 func EventualSafeNodesRecur(graph [][]int) []int {
-	visitedMap := make(map[int]bool)
 
-	res := []int{}
+	safeMap := map[int]bool{}
+	res:= []int{}
+
 	for n := range graph {
-		if dfsSafeNodesRecur(graph, visitedMap, n) {
+		if dfsSafeNodesRecur(graph, safeMap, n) {
 			res = append(res, n)
 		}
 	}
@@ -73,15 +74,21 @@ func EventualSafeNodesRecur(graph [][]int) []int {
 
 }
 
-func dfsSafeNodesRecur(graph [][]int, visited map[int]bool, start int) bool {
+func dfsSafeNodesRecur(graph [][]int, safeMap map[int]bool, start int) bool {
+
+	_,exist := safeMap[start]
+
+	if exist{
+		return safeMap[start]
+	}
+	safeMap[start] = false
 
 	for _, neighboor := range graph[start] {
-		if !visited[start] {
-			dfsSafeNodesRecur(graph, visited, neighboor)
-		} else {
+		if !dfsSafeNodesRecur(graph,safeMap,neighboor){
 			return false
 		}
 	}
 
+	safeMap[start] = true
 	return true
 }
