@@ -2,3 +2,4 @@
 2. https://leetcode.com/problems/number-of-provinces (Medium)
 3. https://leetcode.com/problems/find-eventual-safe-states/ (Medium)
 4. https://leetcode.com/problems/is-graph-bipartite/ (Medium)
+5. https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/
