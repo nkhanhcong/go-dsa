@@ -1,27 +1,28 @@
 package dfs
 
-
 func MakeConnected(n int, connections [][]int) int {
-
-	graph := makeGraph(connections, n)
-
-	visitedMap := make(map[int]bool)
-	dfsConnectionGraph(graph, 0, visitedMap)
-	minLen := n - 1
-	lenCable := len(visitedMap) - 1
-	totalCable := len(connections)
-
-	if totalCable < minLen {
+	numConnection := len(connections)
+	if numConnection < n-1 {
 		return -1
+	} 
+
+	graph := makeGraph(connections)
+
+	minConnected := 0
+	visitedMap := make(map[int]bool, n)
+
+	for i := 0; i < n; i++ {
+		if visitedMap[i] {
+			continue
+		}
+		dfsConnectionGraph(graph, i, visitedMap)
+		minConnected++
 	}
 
-	minCable := min(totalCable,minLen)
-
-
-	return minCable - lenCable
+	return minConnected - 1
 }
 
-func makeGraph(connections [][]int, n int) map[int][]int {
+func makeGraph(connections [][]int) map[int][]int {
 	graph := make(map[int][]int)
 
 	for _, c := range connections {
