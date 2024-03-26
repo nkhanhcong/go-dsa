@@ -18,3 +18,4 @@ This is some my thoughts about solving problems
 
     - You can add some trick into "visited" variable, you can pull visited out and polute it with each time travel.
     - After doing EventualSafeNode, I realize when you use recursive it more clean code compare with using itterative
+    - In some case when asking about minimum connected maked, we can base on attribute of graph: the graph n vertical need at least n-1 edges
