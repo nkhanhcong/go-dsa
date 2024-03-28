@@ -13,6 +13,11 @@ func MinimumFuelCost(roads [][]int, seats int) int64{
 
 func dfsCity(graph map[int][]int, node int, visited map[int]bool, count int)int{
 
+	_,exsited := visited[node]
+	if exsited{
+		return 0
+	}
+
 	visited[node] = true
 
 	for _, neigh := range graph[node]{
