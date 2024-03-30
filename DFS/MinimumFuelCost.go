@@ -1,46 +1,40 @@
 package dfs
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func MinimumFuelCost(roads [][]int, seats int) int64 {
+func MinimumFuelCost(roads [][]int, seats int) int {
+
 	graph := makeGraphCity(roads)
-	visitedMap := make(map[int]bool)
-	ans := int64(0)
 
-	count, result := dfsCity(graph, 0, visitedMap, seats, ans)
+	res := 0
 
-	fmt.Println(count, ans)
-	return int64(result)
+	var dfsCity func(node int, parrent int) int
+	dfsCity = func(node int, parent int) int {
 
-}
+		totalPeople := 0
 
-func dfsCity(graph map[int][]int, node int, visited map[int]bool, seats int, ans int64) (int, int64) {
+		for _, child := range graph[node] {
 
-	_, exsited := visited[node]
+			if child != parent {
 
-	if exsited {
-		return 0, int64(0)
-	}
+				people := dfsCity(child, node)
+				totalPeople += people
 
-	visited[node] = true
-
-	totalPeople := 0
-	for _, neigh := range graph[node] {
-		if visited[neigh] {
-			continue
+				res += (totalPeople / seats)
+				fmt.Println(totalPeople/seats, totalPeople, seats)
+				if totalPeople%seats != 0 && parent != 1 {
+					res += 1
+				}
+			}
 		}
 
-		people, _ := dfsCity(graph, neigh, visited, seats,ans)
-		ans += int64(people / seats)
-		totalPeople += people
+		return totalPeople + 1
 
 	}
 
-	fmt.Println(totalPeople, node)
+	dfsCity(0, -1)
 
-	return totalPeople + 1, ans
+	return res
 
 }
 

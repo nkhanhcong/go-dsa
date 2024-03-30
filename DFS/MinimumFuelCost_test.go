@@ -3,6 +3,8 @@ package dfs
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMinimumFuelCost(t *testing.T) {
@@ -14,6 +16,16 @@ func TestMinimumFuelCost(t *testing.T) {
 		{0, 5},
 		{4, 6},
 	}
+
+	seats := 2
+
+	ans := MinimumFuelCost(roads, seats)
+
+	assert.Equal(t, 7, ans)
+}
+
+func TestMinimumFuelCostWithNone(t *testing.T) {
+	roads := [][]int{}
 
 	seats := 2
 
