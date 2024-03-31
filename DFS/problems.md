@@ -4,3 +4,4 @@
 4. https://leetcode.com/problems/is-graph-bipartite/ (Medium)
 5. https://leetcode.com/problems/number-of-operations-to-make-network-connected/description/
 6. https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/description/
+7. https://leetcode.com/problems/detonate-the-maximum-bombs/
