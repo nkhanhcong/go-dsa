@@ -1,4 +1,4 @@
-This is some my thoughts about solving problems
+This is some my thoughts about solving DFS problems
 
 </h1>Algorithm</h1>
 
