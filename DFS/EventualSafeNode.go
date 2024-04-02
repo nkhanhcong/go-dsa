@@ -10,7 +10,6 @@ func EventualSafeNodes(graph [][]int) []int {
 		dfsNode(graph, nNode, visitedMap, stateMap)
 
 	}
-
 	fmt.Println("this is stateMap", stateMap)
 	res := make([]int, 0)
 
