@@ -22,6 +22,7 @@ func EventualSafeNodes(graph [][]int) []int {
 	return res
 }
 
+
 // None is node not travel yet
 // 1 is node is in stack
 // 2 is node is safe node
