@@ -23,3 +23,4 @@ func TestCannotTravelAllRoom(t *testing.T) {
 	assert.Equal(t, false, res)
 
 }
+

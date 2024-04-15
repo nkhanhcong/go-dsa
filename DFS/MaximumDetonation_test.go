@@ -22,6 +22,7 @@ func TestMaximumDenotationWithoutConnected(t *testing.T) {
 	}
 
 	assert.Equal(t, 1, MaximumDenotation(bombs))
+
 }
 
 func TestMaximumDenotationWith5Connected(t *testing.T) {

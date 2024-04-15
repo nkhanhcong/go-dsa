@@ -22,7 +22,6 @@ func EventualSafeNodes(graph [][]int) []int {
 	return res
 }
 
-
 // None is node not travel yet
 // 1 is node is in stack
 // 2 is node is safe node
@@ -62,7 +61,7 @@ func dfsNode(graph [][]int, start int, visitedMap map[int]bool, stateMap map[int
 func EventualSafeNodesRecur(graph [][]int) []int {
 
 	safeMap := map[int]bool{}
-	res:= []int{}
+	res := []int{}
 
 	for n := range graph {
 		if dfsSafeNodesRecur(graph, safeMap, n) {
@@ -76,15 +75,15 @@ func EventualSafeNodesRecur(graph [][]int) []int {
 
 func dfsSafeNodesRecur(graph [][]int, safeMap map[int]bool, start int) bool {
 
-	_,exist := safeMap[start]
+	_, exist := safeMap[start]
 
-	if exist{
+	if exist {
 		return safeMap[start]
 	}
 	safeMap[start] = false
 
 	for _, neighboor := range graph[start] {
-		if !dfsSafeNodesRecur(graph,safeMap,neighboor){
+		if !dfsSafeNodesRecur(graph, safeMap, neighboor) {
 			return false
 		}
 	}

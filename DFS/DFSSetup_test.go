@@ -26,3 +26,13 @@ func TestDFSRecursive(t *testing.T){
 
 	fmt.Println(visitedMap)
 }
+
+func TestDFSRecursive2(t *testing.T){
+  graph := CreateGraph()
+  start:= "0"
+
+  visitedMap:= make(map[string]bool)
+  DFSTravelRecursive2(graph,start, visitedMap)
+
+  fmt.Println(visitedMap)
+}
