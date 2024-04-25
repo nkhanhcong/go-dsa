@@ -14,7 +14,9 @@ func CanVisitAllRooms(rooms [][]int) bool {
 				visitedRooms[nextRoom] = true
 				stackLockedRooms = append(stackLockedRooms, nextRoom)
 			}
+
 		}
+
 	}
 
 	return len(rooms) == len(visitedRooms)

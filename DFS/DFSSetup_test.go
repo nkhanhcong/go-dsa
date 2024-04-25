@@ -5,34 +5,33 @@ import (
 	"testing"
 )
 
-
-func TestDFSTravel( *testing.T){
+func TestDFSTravel(*testing.T) {
 	graph := CreateGraph()
 	startNode := "0"
 
-	visited:=DFSTravel(graph,startNode)
+	visited := DFSTravel(graph, startNode)
 
 	fmt.Println(visited)
 
 }
 
-func TestDFSRecursive(t *testing.T){
+func TestDFSRecursive(t *testing.T) {
 
 	graph := CreateGraph()
-	start:= "0"
+	start := "0"
 
-	visitedMap:= make(map[string]bool)
-	DFSTravelRecursive(graph,start, visitedMap)
+	visitedMap := make(map[string]bool)
+	DFSTravelRecursive(graph, start, visitedMap)
 
 	fmt.Println(visitedMap)
 }
 
-func TestDFSRecursive2(t *testing.T){
-  graph := CreateGraph()
-  start:= "0"
+func TestDFSRecursive2(t *testing.T) {
+	graph := CreateGraph()
+	start := "0"
 
-  visitedMap:= make(map[string]bool)
-  DFSTravelRecursive2(graph,start, visitedMap)
+	visitedMap := make(map[string]bool)
+	DFSTravelRecursive(graph, start, visitedMap)
 
-  fmt.Println(visitedMap)
+	fmt.Println(visitedMap)
 }

@@ -27,7 +27,6 @@ func DFSTravel(graph map[string][]string, start string) map[string]bool {
 			if !visitedMap[neighbor] {
 				visitedMap[neighbor] = true
 				stackSlice = append(stackSlice, neighbor)
-				fmt.Println("visited: ", neighbor)
 			}
 		}
 	}
