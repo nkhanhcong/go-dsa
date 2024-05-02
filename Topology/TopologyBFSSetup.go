@@ -1,6 +1,6 @@
 package topology
 
 
-func TopologyBFS(){
+func TopologyBFS(graph [][]int){
 
 }
