@@ -3,6 +3,8 @@ package topology
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 
@@ -17,8 +19,8 @@ func TestTopologyBFSSetup(t *testing.T) {
 		{3},
 	}
 
-	stack := TopologyBFS(adjancyList, 5)
-	fmt.Println(stack)
+	stack := TopologyBFS(adjancyList, 6)
 
-	// expectedOutput := []int{0, 4, 5, 2, 1, 3}
+	expectedOutput := []int{0, 4, 2, 5, 1, 3}
+	assert.Equal(t, expectedOutput,stack)
 }
