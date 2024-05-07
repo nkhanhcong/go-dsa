@@ -15,3 +15,12 @@ func IsRight(a []int, b []int)bool{
 func Contains(a []int, b []int )bool{
 	return a[0] >= b[0] && a[1] <= b[1]
 }
+
+func IsContained(a []int, b []int )bool{
+	return a[0] <= b[0] && a[1]>= b[1]
+}
+
+func Overlap(a []int, b []int) bool{
+
+	return IsLeft(a,b) && IsRight(a,b)
+}
