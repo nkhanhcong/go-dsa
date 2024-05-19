@@ -21,6 +21,24 @@ func IsContained(a []int, b []int )bool{
 }
 
 func Overlap(a []int, b []int) bool{
-
-	return IsLeft(a,b) && IsRight(a,b)
+	return !IsLeft(a,b) && !IsRight(a,b)
 }
+
+func NotOverlap(a []int, b[]int) bool{
+	return IsLeft(a,b) || IsRight(a,b)
+}
+
+func Intersect(a []int, b []int) []int{
+
+	if NotOverlap(a,b){
+		return []int{} 
+	}
+
+	return []int{max(a[0],b[0]), min(a[1],b[1])}
+}
+
+func Merge( a[]int, b []int) []int{
+
+
+	return []int{}
+} 
