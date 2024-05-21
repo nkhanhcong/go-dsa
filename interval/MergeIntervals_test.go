@@ -34,4 +34,16 @@ func TestMergeWithOneArrayResult(t *testing.T) {
 }
 
 
-// current testcase fail: [[2,3],[5,5],[2,2],[3,4],[3,4]]
+func TestMergeWithBeginningAndLast(t *testing.T) {
+	intervals := [][]int{
+		{2,3},
+		{5,5},
+		{2,2},
+		{3,4},
+		{3,4},
+	}
+	res := MergeInterval(intervals)
+
+	fmt.Println(res)
+	
+}
