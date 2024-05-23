@@ -20,30 +20,29 @@ func TestMergeIntervals(t *testing.T) {
 
 func TestMergeWithOneArrayResult(t *testing.T) {
 	intervals := [][]int{
-		{2,3},
-		{4,5},
-		{6,7},
-		{8,9},
-		{1,10},
+		{2, 3},
+		{4, 5},
+		{6, 7},
+		{8, 9},
+		{1, 10},
 	}
 
 	res := MergeInterval(intervals)
 
 	fmt.Println(res)
-	
-}
 
+}
 
 func TestMergeWithBeginningAndLast(t *testing.T) {
 	intervals := [][]int{
-		{2,3},
-		{5,5},
-		{2,2},
-		{3,4},
-		{3,4},
+		{2, 3},
+		{5, 5},
+		{2, 2},
+		{3, 4},
+		{3, 4},
 	}
 	res := MergeInterval(intervals)
 
 	fmt.Println(res)
-	
+
 }
